@@ -1,6 +1,8 @@
 # Instacart
 
-An exploration of the Instacart market basket data. 
+An exploration of the Instacart market basket data. Full notebook can be viewed at nbviewer:
+
+[Instacart Notebook](https://nbviewer.jupyter.org/github/hjhuney/Instacart/blob/master/Instacart.ipynb)
 
 ## Table of Contents
 
