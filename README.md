@@ -6,7 +6,7 @@ An exploration of the Instacart market basket data.
 
 **Section 1:** [Overview](https://github.com/hjhuney/Instacart#overview)<br>
 **Section 2:**  [Data Exploration](https://github.com/hjhuney/Instacart#data-exploration)<br>
-**Section 3:**  [Customers Also Purchased ...](https://github.com/hjhuney/Instacart/blob/master/README.md#customers-also-purchased-)<br>
+**Section 3:**  [Associations](https://github.com/hjhuney/Instacart/blob/master/README.md#associations)<br>
 **Section 4:**  [Recommender System Options](https://github.com/hjhuney/Instacart#recommender-system-options)<br>
 
 ## Overview
