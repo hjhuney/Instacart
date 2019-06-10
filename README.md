@@ -75,25 +75,38 @@ What this visualization tells us is that the majority of products are ordered be
 
 Items ordered 5 or fewer times account for 8.5% of total products and products ordered fewer than 20 times account for roughly 30% of products. A sizable percentage (~ 23%) of products are ordered between 100 and 500 times. 
 
+## Associations
+
+Let's now take a look at items that are frequently purchased with other items. We'll take a look at three popular items: organic strawberries, honeycrisp apples, and organic turkey burgers. All the charts below have interactive versions with more detailed stats included the percentage of baskets the item is purchased in ("pct_orders") and how much more likely customers purchasing the main items were more likely to purchase this additional item ("purchase ratio"). For instance a "purchase ratio" of 1.0 means a customer was exactly as likely to purcahse the item as an average customer, while a ratio of 3.2 indicates these customers were 3.2 times more likely to purchase the item than the average customer. 
 
 ### Item Sample #1: Organic Strawberries
 
-Now, let's look at individual products and see what other items customers purchased. We'll start by looking at organic strawberries, one of the most popular items. The chart below lays out the top 30 products most frequently ordered alongside of organic strawberries. 
+The chart below lays out the top 30 products most frequently ordered alongside of organic strawberries. 
 
 ![Strawberries](https://github.com/hjhuney/Instacart/blob/master/images/strawberries.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/strawberry.html)</i>
 
-This is another chart where the interactive version is good for better detail. For instance, we can see that 9% of customers who purchased organic strawberries also purchased 
+In the interactive chart, we can see that 9% of customers who purchased organic strawberries also purchased organic blueberries and these customers were 3 times more likely to purchase this item than the average customer. Organic raspberries and organic string cheese were also much more likely to be purchased by these customers. 
 
 ### Item Sample #2: Honeycrisp Apples
+
+Next, let's shift to honeycrisp apples. 
 
 ![Honeycrisp](https://github.com/hjhuney/Instacart/blob/master/images/honeycrisp.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/honeycrisp.html)</i>
 
+One item that customers who purchase honeycrisp apples are 3.2 times more likely to purchase than the average customer is 'seedless red grapes'. These are purchased by roughly 8% of customers who bought the honeycrisp apples, but only by 2.5% of the general population. 
+
 ### Item Sample #3: Organic Turkey Burgers
+
+Finally, let's move away from produce and shift to organic turkey burgers. 
 
 ![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/images/turkey_burgers.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/turkey.html)</i>
+
+This one yields very interesting results. There are several items that customers purchasing turkey burgers are more likely to purchase than the average customer including "organic baby carrots" (4.1 times more likely), "organic red bell peppers" (3.8 times more likely), "boneless skinless chicken breasts" (3.6 times more likely), and "original hummus" (3.3 times more likely).
+
+With that, let's take a look at some possible recommender systems. 
 
 ## Recommender System Options
 
@@ -103,20 +116,19 @@ We can provide recommendations based on several factors. One way would be to mak
 
 In this case, we find that bananas (regular and organic), organic strawberries, organic avocadoes, and organic baby spinach are most frequently purchased with honeycrisp apples. 
 
-
-In another example, we find the items most frequently purchased with "Organic Turkey Burgers". The top 5 items includes bananas, strawberries, and hass avocados. 
-
-
-
 The upside to this method is that we will always get frequently purchased items that pair well with the item the customer purchased. We're unlikely to get very off the wall recommendations using this system. 
 
-The downside is that we will likely always be giving our customers similar recommendations. For instance, note that the honeycrisp apples and organic turkey burgers both generated similar recommednations for bananas and strawberries. We could find ways to negate this issue. For instance, we could randomize the top 30 items. Or we could compare the items purchased versus an "average market basket." For instance, if bananas are purchased in 15% of baskets, but only 11% of customers who order oganic turkey burgers order them, we would not want to recommend them. However, if zucchni is purchased by 8% of customer who order the turkey burgers, but only 3% of our general population, this might be a good recommendation since a much higher than average percentage of customers who order turkey burgers also order zucchini. 
+The downside is that we will likely always be giving our customers similar and popular recommendations. For instance, note that the honeycrisp apples and organic turkey burgers both generated similar recommednations for bananas and strawberries. 
 
-In the case of the organic turkey burgers, we find that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. 
+### Item-Based: Purchase Ratio over Average Customer
+
+Simply recommending the top purchased items has more downsides in all likelihood. However, we can modify this approach by doing what we did above: looking at which items are more likely to be purchased given that a customer purchased one item. In the case of the organic turkey burgers, we found that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. These might make good recommendations. 
+
+The benefit of this method is that we have strong evidence that customers that purchase these items are more likely to be interested in these addtional items. However, we may have to modify our formula somewhat to insure that we're not getting too obscure items or alternatively, too popular items. Overall, however, this methodology seems like it could make the beginnings of a good recommendation algorithm. 
 
 ### Item-Based Collaborative Filtering
 
-Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased) and find cosine similarity between all the products. From this, we'll find the most similar items. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
+Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased), and find cosine similarity between all the products. From this, we'll find the most similar items. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
 
 As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very close matches, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". However, some recommendations were more questionable such as "Cara Cara Oranges" and "coleslaw". 
 
@@ -130,8 +142,10 @@ The benefit of this approach over the previous ones is that we're basing our rec
 
 ### Singular Value Decomposition (SVD)
 
-Principal components analysis (PCA). 
+Many high performing competitive algorithms in the recommender system sphere rely on Singular Value Decomposition ("SVD"). SVD is related to Principal Components Analysis ("PCA") and searches for latent (hidden) factors in the data in order to group the elements. 
 
-### Ultimate Goals
+### Overall
 
-Ultimately, the real goal should be to find recommendations that showcase new items to the customer that they wish to purchase. 
+Overall, the choice of algorithm here is a complex matter. There are several ways to score our data, but scoring metrics are more art than science in this sphere. This makes recommender systems very different from other spheres of machine learning, such as fraud detection, pricing, churn prediction, etc, where it's much easier to come up with reasonably objective scoring metrics. 
+
+The ultimate goal of a recommender system should be to provide the customer with new info on products they had not previously considered, but that they would like to purchase. This can require significant user testing to perfect, as even world-class algorithms that have scored very well have performed poorly when put into practice. 
