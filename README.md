@@ -20,6 +20,6 @@ The upside to this method is that we will always get frequently purchased items 
 
 The downside is that we will likely always be giving our customers similar recommendations. For instance, note that the honeycrisp apples and organic turkey burgers both generated similar recommednations for bananas and strawberries. We could find ways to negate this issue. For instance, we could randomize the top 30 items. Or we could compare the items purchased versus an "average market basket." For instance, if bananas are purchased in 15% of baskets, but only 11% of customers who order oganic turkey burgers order them, we would not want to recommend them. However, if zucchni is purchased by 8% of customer who order the turkey burgers, but only 3% of our general population, this might be a good recommendation since a much higher than average percentage of customers who order turkey burgers also order zucchini. 
 
-### User-Based Collaborative Filtering
+### Collaborative Filtering
 
 Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products (0=not purchased, 1=purchased) and find cosine similarity between all the orders. From this, we'll find the most similar "market baskets" and we can determine what items people were most likely to purchase in these baskets. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
