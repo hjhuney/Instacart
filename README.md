@@ -4,7 +4,7 @@
 
 **Section 1:** [Overview](https://github.com/hjhuney/Instacart#overview)<br>
 **Section 2:**  [Data Exploration](https://github.com/hjhuney/Instacart#data-exploration)<br>
-**Section 3:**  [Data Exploration, Part II: Customer Purchases](https://github.com/hjhuney/An-Intro-to-Scala/blob/master/Part-02-Data-Types.md)<br>
+**Section 3:**  [Customers Also Purchased ...](https://github.com/hjhuney/Instacart/blob/master/README.md#customers-also-purchased-)<br>
 **Section 4:**  [Recommender System Options](https://github.com/hjhuney/Instacart#recommender-system-options)<br>
 
 ## Overview
