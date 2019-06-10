@@ -1,8 +1,15 @@
 # Instacart
 
+Table of Contents
+
+**Section 1:** [Overview](https://github.com/hjhuney/Instacart#overview)<br>
+**Section 2:**  [Data Exploration, Part I: Orders](https://github.com/hjhuney/Instacart#data-exploration)<br>
+**Section 3:**  [Data Exploration, Part II: Customer Purchases](https://github.com/hjhuney/An-Intro-to-Scala/blob/master/Part-02-Data-Types.md)<br>
+**Section 4:**  [Recommender System Options](https://github.com/hjhuney/Instacart#recommender-system-options)<br>
+
 ## Overview
 
-## Data Exploration
+## Data Exploration, Part I: Order Attributes
 
 ### Orders by Time of Day
 
@@ -47,7 +54,7 @@ The most interesting observation here is that ~ 10% of customers reorder exactly
 ![Bins](https://github.com/hjhuney/Instacart/blob/master/images/product_bins.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/bin_chart.html)</i>
 
-## Customers Who Purchased X Item Also Purchased ...
+## Data Exploration, Part II: Customers Also Purchased ... 
 
 ### Organic Strawberries
 
