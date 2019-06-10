@@ -1,5 +1,7 @@
 # Instacart
 
+An exploration of the Instacart market basket data. 
+
 ## Table of Contents
 
 **Section 1:** [Overview](https://github.com/hjhuney/Instacart#overview)<br>
@@ -8,6 +10,8 @@
 **Section 4:**  [Recommender System Options](https://github.com/hjhuney/Instacart#recommender-system-options)<br>
 
 ## Overview
+
+The Instacart Market Basket Analysis [dataset](https://www.kaggle.com/c/instacart-market-basket-analysis) is a popular one on Kaggle. The data consists of customer orders for an online grocery delivery company. There are several files in the dataset, approximately 50,000 products, and over 3 million customer orders. The goal is to create a recommender system to provide recommendations for customers. 
 
 ## Data Exploration
 
@@ -40,36 +44,59 @@ The most interesting observation here is that ~ 10% of customers reorder exactly
 
 ### Orders by Department
 
+Next, we'll look at product orders by departments. 
+
 ![Orders by Departments](https://github.com/hjhuney/Instacart/blob/master/images/dept.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/dept.html)</i>
 
+Produce dominates this category, accounting for roughly 29% of all items purchased. Dairy + eggs are 2nd most popular department, accounting for ~ 17% of items purchased. 
+
 ### Most Frequently Ordered Items
 
+Now, let's examine the most popular items. The chart below looks at the 30 most frequently purchased items from Instacart. 
 
 ![Top 30 Items](https://github.com/hjhuney/Instacart/blob/master/images/top_30_items.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/top30.html)</i>
 
+Regular bananas are ordered in a whopping 13% of baskets, while organic bananas are ordered in 11%. There's a significant dropoff by the time we reach the 30th most popular item (organic baby arugla), which is in 2% of baskets. Produce items dominate the top 30 products. 
+
 ### Products by Number of Times Ordered (Bins)
+
+Finally, let's take a look at how often the products are ordered. There are nearly 50,000 products available, so bin the products based on the number of times they were ordered. 
 
 ![Bins](https://github.com/hjhuney/Instacart/blob/master/images/product_bins.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/bin_chart.html)</i>
 
-## Customers Also Purchased ... 
+What this visualization tells us is that the majority of products are ordered between 0 - 100 times. Products ordered more than 10,000 times are rare (about 1% of total products) and even products ordered more than 2,500 times make up a small percentage (~ 5%) of the total number of products.
+
+Items ordered 5 or fewer times account for 8.5% of total products and products ordered fewer than 20 times account for roughly 30% of products. A sizable percentage (~ 23%) of products are ordered between 100 and 500 times. 
+
+## Associations
+
+Now, let's look at individual products and see what other items customers purchased. 
 
 ### Organic Strawberries
+
+We'll start by looking at organic strawberries, one of the most popular items. The chart below lays out the top 30 products ordered alongside of organic strawberries. 
 
 ![Strawberries](https://github.com/hjhuney/Instacart/blob/master/images/strawberries.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/strawberry.html)</i>
 
 ### Honeycrisp Apples
 
+Next, let's look at honeycrisp apples. This time, we'll look at the 10 most commonly ordered items alongside of our product. 
+
 ![Honeycrisp](https://github.com/hjhuney/Instacart/blob/master/images/honeycrisp.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/honeycrisp.html)</i>
 
 ### Turkey Burgers
 
+Finally, let's shift gears away from produce and look at the top 20 items purchased alongside of organic turkey burgers. 
+
 ![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/images/turkey_burgers.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/turkey.html)</i>
+
+Bananas still dominate at the top, but we can see some different preferences creeping in, as turkey burger customers were more likely to order baby carrots, hummus, and cucumber kirby than the "honeycrisp" and "strawberry" customers. 
 
 ## Recommender System Options
 
