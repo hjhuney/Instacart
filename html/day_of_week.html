@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-64482d20ab4610eaa1d4e414fc85e6c0"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "count", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "ordinal", "field": "day", "title": "Day of Week"}, {"type": "quantitative", "field": "count"}, {"type": "quantitative", "field": "pct_of_total"}], "x": {"type": "ordinal", "bin": false, "field": "day", "sort": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "title": ""}, "y": {"type": "quantitative", "field": "count", "title": "Total Count"}}, "height": 400, "title": "Order Frequency by Day of Week", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-64482d20ab4610eaa1d4e414fc85e6c0": [{"index": 0, "count": 600905, "pct_of_total": 17.56, "day": "Sunday"}, {"index": 1, "count": 587478, "pct_of_total": 17.17, "day": "Monday"}, {"index": 2, "count": 467260, "pct_of_total": 13.66, "day": "Tuesday"}, {"index": 5, "count": 453368, "pct_of_total": 13.25, "day": "Friday"}, {"index": 6, "count": 448761, "pct_of_total": 13.12, "day": "Saturday"}, {"index": 3, "count": 436972, "pct_of_total": 12.77, "day": "Wednesday"}, {"index": 4, "count": 426339, "pct_of_total": 12.46, "day": "Thursday"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

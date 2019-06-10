@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-bbfc353d7e159261fa9a646d2696b315"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "count", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "ordinal", "field": "index", "title": "Days since Prior Order"}, {"type": "quantitative", "field": "count"}, {"type": "quantitative", "field": "pct_orders"}, {"type": "ordinal", "field": "product_num"}], "x": {"type": "ordinal", "bin": false, "field": "index", "sort": ["Banana", "Bag of Organic Bananas", "Organic Strawberries", "Organic Baby Spinach", "Organic Hass Avocado", "Organic Avocado", "Organic Raspberries", "Organic Baby Carrots", "Organic Zucchini", "Large Lemon", "Original Hummus", "Cucumber Kirby", "Limes", "Organic Blueberries", "Organic Whole Milk", "Organic Red Bell Pepper", "Organic Grape Tomatoes", "Organic Unsweetened Almond Milk", "Honeycrisp Apple", "Boneless Skinless Chicken Breasts"], "title": ""}, "y": {"type": "quantitative", "field": "count", "title": "Total Orders"}}, "height": 400, "title": "Top 20 Products Ordered with Organic Turkey Burgers", "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-bbfc353d7e159261fa9a646d2696b315": [{"index": "Banana", "count": 179, "pct_orders": 16.76, "product_num": 24852}, {"index": "Bag of Organic Bananas", "count": 172, "pct_orders": 16.1, "product_num": 13176}, {"index": "Organic Strawberries", "count": 169, "pct_orders": 15.82, "product_num": 21137}, {"index": "Organic Baby Spinach", "count": 151, "pct_orders": 14.14, "product_num": 21903}, {"index": "Organic Hass Avocado", "count": 135, "pct_orders": 12.64, "product_num": 47209}, {"index": "Organic Avocado", "count": 114, "pct_orders": 10.67, "product_num": 47766}, {"index": "Organic Raspberries", "count": 101, "pct_orders": 9.46, "product_num": 27966}, {"index": "Organic Baby Carrots", "count": 99, "pct_orders": 9.27, "product_num": 42265}, {"index": "Organic Zucchini", "count": 82, "pct_orders": 7.68, "product_num": 45007}, {"index": "Large Lemon", "count": 75, "pct_orders": 7.02, "product_num": 47626}, {"index": "Original Hummus", "count": 73, "pct_orders": 6.84, "product_num": 30489}, {"index": "Cucumber Kirby", "count": 70, "pct_orders": 6.55, "product_num": 49683}, {"index": "Limes", "count": 70, "pct_orders": 6.55, "product_num": 26209}, {"index": "Organic Blueberries", "count": 68, "pct_orders": 6.37, "product_num": 39275}, {"index": "Organic Whole Milk", "count": 68, "pct_orders": 6.37, "product_num": 27845}, {"index": "Organic Red Bell Pepper", "count": 68, "pct_orders": 6.37, "product_num": 10749}, {"index": "Organic Grape Tomatoes", "count": 64, "pct_orders": 5.99, "product_num": 40706}, {"index": "Organic Unsweetened Almond Milk", "count": 64, "pct_orders": 5.99, "product_num": 35951}, {"index": "Honeycrisp Apple", "count": 61, "pct_orders": 5.71, "product_num": 45066}, {"index": "Boneless Skinless Chicken Breasts", "count": 57, "pct_orders": 5.34, "product_num": 25890}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

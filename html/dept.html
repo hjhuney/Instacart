@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-3e73da957ef4674121d9f2932c31a7b2"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "freq", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "ordinal", "field": "department", "title": "Department"}, {"type": "quantitative", "field": "freq"}, {"type": "quantitative", "field": "pct_orders"}], "x": {"type": "ordinal", "bin": false, "field": "department"}, "y": {"type": "quantitative", "field": "freq", "title": "Total Orders"}}, "height": 400, "title": "Orders by Department", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-3e73da957ef4674121d9f2932c31a7b2": [{"department_id": 4, "freq": 9479291, "department": "produce", "pct_orders": 29.23}, {"department_id": 16, "freq": 5414016, "department": "dairy eggs", "pct_orders": 16.69}, {"department_id": 19, "freq": 2887550, "department": "snacks", "pct_orders": 8.9}, {"department_id": 7, "freq": 2690129, "department": "beverages", "pct_orders": 8.29}, {"department_id": 1, "freq": 2236432, "department": "frozen", "pct_orders": 6.9}, {"department_id": 13, "freq": 1875577, "department": "pantry", "pct_orders": 5.78}, {"department_id": 3, "freq": 1176787, "department": "bakery", "pct_orders": 3.63}, {"department_id": 15, "freq": 1068058, "department": "canned goods", "pct_orders": 3.29}, {"department_id": 20, "freq": 1051249, "department": "deli", "pct_orders": 3.24}, {"department_id": 9, "freq": 866627, "department": "dry goods pasta", "pct_orders": 2.67}, {"department_id": 17, "freq": 738666, "department": "household", "pct_orders": 2.28}, {"department_id": 14, "freq": 709569, "department": "breakfast", "pct_orders": 2.19}, {"department_id": 12, "freq": 708931, "department": "meat seafood", "pct_orders": 2.19}, {"department_id": 11, "freq": 447123, "department": "personal care", "pct_orders": 1.38}, {"department_id": 18, "freq": 423802, "department": "babies", "pct_orders": 1.31}, {"department_id": 6, "freq": 269253, "department": "international", "pct_orders": 0.83}, {"department_id": 5, "freq": 153696, "department": "alcohol", "pct_orders": 0.47}, {"department_id": 8, "freq": 97724, "department": "pets", "pct_orders": 0.3}, {"department_id": 21, "freq": 69145, "department": "missing", "pct_orders": 0.21}, {"department_id": 2, "freq": 36291, "department": "other", "pct_orders": 0.11}, {"department_id": 10, "freq": 34573, "department": "bulk", "pct_orders": 0.11}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

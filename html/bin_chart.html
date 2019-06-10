@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-f70ff82f4499db525538ce284872bd43"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "count", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "ordinal", "field": "bin", "title": "Bin"}, {"type": "quantitative", "field": "count"}, {"type": "quantitative", "field": "pct_total"}], "x": {"type": "ordinal", "field": "bin", "sort": ["0-5", "6-20", "21-50", "51-100", "101-500", "501-2500", "2500-10000", "10001-50000", "50000+"], "title": "Bin (Total Orders)"}, "y": {"type": "quantitative", "field": "count", "title": "Number of Products"}}, "height": 400, "title": "Total Orders for Products (grouped by bins)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-f70ff82f4499db525538ce284872bd43": [{"bin": "101-500", "count": 11614, "pct_total": 23.38}, {"bin": "6-20", "count": 10473, "pct_total": 21.08}, {"bin": "21-50", "count": 8689, "pct_total": 17.49}, {"bin": "51-100", "count": 6397, "pct_total": 12.88}, {"bin": "501-2500", "count": 5997, "pct_total": 12.07}, {"bin": "0-5", "count": 4234, "pct_total": 8.52}, {"bin": "2500-10000", "count": 1781, "pct_total": 3.59}, {"bin": "10001-50000", "count": 432, "pct_total": 0.87}, {"bin": "50000+", "count": 60, "pct_total": 0.12}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

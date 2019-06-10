@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-3db4bc69f8a7856b0194699416cd89c2"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "count", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "quantitative", "field": "days_since_prior_order", "title": "Days since Last Order"}, {"type": "quantitative", "field": "count"}, {"type": "quantitative", "field": "pct_of_total"}], "x": {"type": "ordinal", "bin": false, "field": "days_since_prior_order", "title": "Days Since Last Order"}, "y": {"type": "quantitative", "field": "count", "title": "Total Count"}}, "height": 400, "title": "Days Since Prior Order", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-3db4bc69f8a7856b0194699416cd89c2": [{"days_since_prior_order": 0, "count": 67755, "pct_of_total": 2.11}, {"days_since_prior_order": 1, "count": 145247, "pct_of_total": 4.52}, {"days_since_prior_order": 2, "count": 193206, "pct_of_total": 6.01}, {"days_since_prior_order": 3, "count": 217005, "pct_of_total": 6.75}, {"days_since_prior_order": 4, "count": 221696, "pct_of_total": 6.9}, {"days_since_prior_order": 5, "count": 214503, "pct_of_total": 6.67}, {"days_since_prior_order": 6, "count": 240013, "pct_of_total": 7.47}, {"days_since_prior_order": 7, "count": 320608, "pct_of_total": 9.97}, {"days_since_prior_order": 8, "count": 181717, "pct_of_total": 5.65}, {"days_since_prior_order": 9, "count": 118188, "pct_of_total": 3.68}, {"days_since_prior_order": 10, "count": 95186, "pct_of_total": 2.96}, {"days_since_prior_order": 11, "count": 80970, "pct_of_total": 2.52}, {"days_since_prior_order": 12, "count": 76146, "pct_of_total": 2.37}, {"days_since_prior_order": 13, "count": 83214, "pct_of_total": 2.59}, {"days_since_prior_order": 14, "count": 100230, "pct_of_total": 3.12}, {"days_since_prior_order": 15, "count": 66579, "pct_of_total": 2.07}, {"days_since_prior_order": 16, "count": 46941, "pct_of_total": 1.46}, {"days_since_prior_order": 17, "count": 39245, "pct_of_total": 1.22}, {"days_since_prior_order": 18, "count": 35881, "pct_of_total": 1.12}, {"days_since_prior_order": 19, "count": 34384, "pct_of_total": 1.07}, {"days_since_prior_order": 20, "count": 38527, "pct_of_total": 1.2}, {"days_since_prior_order": 21, "count": 45470, "pct_of_total": 1.41}, {"days_since_prior_order": 22, "count": 32012, "pct_of_total": 1.0}, {"days_since_prior_order": 23, "count": 23885, "pct_of_total": 0.74}, {"days_since_prior_order": 24, "count": 20712, "pct_of_total": 0.64}, {"days_since_prior_order": 25, "count": 19234, "pct_of_total": 0.6}, {"days_since_prior_order": 26, "count": 19016, "pct_of_total": 0.59}, {"days_since_prior_order": 27, "count": 22013, "pct_of_total": 0.68}, {"days_since_prior_order": 28, "count": 26777, "pct_of_total": 0.83}, {"days_since_prior_order": 29, "count": 19191, "pct_of_total": 0.6}, {"days_since_prior_order": 30, "count": 369323, "pct_of_total": 11.49}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

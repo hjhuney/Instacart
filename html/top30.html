@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-3a0821f4cb5de9e9e16552b2c8814d1b"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "count", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "ordinal", "field": "index", "title": "Product"}, {"type": "quantitative", "field": "count"}, {"type": "quantitative", "field": "Pct_of_Baskets"}, {"type": "ordinal", "field": "product_num"}], "x": {"type": "ordinal", "bin": false, "field": "index", "sort": ["Banana", "Bag of Organic Bananas", "Organic Strawberries", "Organic Baby Spinach", "Organic Hass Avocado", "Organic Avocado", "Large Lemon", "Strawberries", "Limes", "Organic Whole Milk", "Organic Raspberries", "Organic Yellow Onion", "Organic Garlic", "Organic Zucchini", "Organic Blueberries", "Cucumber Kirby", "Organic Fuji Apple", "Organic Lemon", "Apple Honeycrisp Organic", "Organic Grape Tomatoes", "Seedless Red Grapes", "Organic Cucumber", "Honeycrisp Apple", "Organic Baby Carrots", "Organic Half & Half", "Sparkling Water Grapefruit", "Organic Large Extra Fancy Fuji Apple", "Yellow Onions", "Organic Gala Apples", "Organic Baby Arugula"], "title": ""}, "y": {"type": "quantitative", "field": "count", "title": "Total Orders"}}, "height": 400, "title": "Top 30 Products Ordered", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-3a0821f4cb5de9e9e16552b2c8814d1b": [{"index": "Banana", "count": 472565, "product_num": 24852, "Pct_of_Baskets": 13.813315841796298}, {"index": "Bag of Organic Bananas", "count": 379450, "product_num": 13176, "Pct_of_Baskets": 11.091516926072826}, {"index": "Organic Strawberries", "count": 264683, "product_num": 21137, "Pct_of_Baskets": 7.736819013160452}, {"index": "Organic Baby Spinach", "count": 241921, "product_num": 21903, "Pct_of_Baskets": 7.0714741501448515}, {"index": "Organic Hass Avocado", "count": 213584, "product_num": 47209, "Pct_of_Baskets": 6.243169195251913}, {"index": "Organic Avocado", "count": 176815, "product_num": 47766, "Pct_of_Baskets": 5.168392582115079}, {"index": "Large Lemon", "count": 152657, "product_num": 47626, "Pct_of_Baskets": 4.4622419274831975}, {"index": "Strawberries", "count": 142951, "product_num": 16797, "Pct_of_Baskets": 4.178530599812983}, {"index": "Limes", "count": 140627, "product_num": 26209, "Pct_of_Baskets": 4.110598895145192}, {"index": "Organic Whole Milk", "count": 137905, "product_num": 27845, "Pct_of_Baskets": 4.031033447595396}, {"index": "Organic Raspberries", "count": 137057, "product_num": 27966, "Pct_of_Baskets": 4.006245975324188}, {"index": "Organic Yellow Onion", "count": 113426, "product_num": 22935, "Pct_of_Baskets": 3.3154997993325503}, {"index": "Organic Garlic", "count": 109778, "product_num": 24964, "Pct_of_Baskets": 3.2088668997507517}, {"index": "Organic Zucchini", "count": 104823, "product_num": 45007, "Pct_of_Baskets": 3.0640297239207586}, {"index": "Organic Blueberries", "count": 100060, "product_num": 39275, "Pct_of_Baskets": 2.924804805963492}, {"index": "Cucumber Kirby", "count": 97315, "product_num": 49683, "Pct_of_Baskets": 2.844567056689358}, {"index": "Organic Fuji Apple", "count": 89632, "product_num": 28204, "Pct_of_Baskets": 2.6199890502510463}, {"index": "Organic Lemon", "count": 87746, "product_num": 5876, "Pct_of_Baskets": 2.5648603088554123}, {"index": "Apple Honeycrisp Organic", "count": 85020, "product_num": 8277, "Pct_of_Baskets": 2.4851779392666007}, {"index": "Organic Grape Tomatoes", "count": 84255, "product_num": 40706, "Pct_of_Baskets": 2.462816599304957}, {"index": "Seedless Red Grapes", "count": 82689, "product_num": 4920, "Pct_of_Baskets": 2.4170416210305334}, {"index": "Organic Cucumber", "count": 80392, "product_num": 30391, "Pct_of_Baskets": 2.3498991401260945}, {"index": "Honeycrisp Apple", "count": 79769, "product_num": 45066, "Pct_of_Baskets": 2.331688532549488}, {"index": "Organic Baby Carrots", "count": 76896, "product_num": 42265, "Pct_of_Baskets": 2.2477092780268704}, {"index": "Organic Half & Half", "count": 76360, "product_num": 49235, "Pct_of_Baskets": 2.232041724798843}, {"index": "Sparkling Water Grapefruit", "count": 75886, "product_num": 44632, "Pct_of_Baskets": 2.21818646317555}, {"index": "Organic Large Extra Fancy Fuji Apple", "count": 75165, "product_num": 19057, "Pct_of_Baskets": 2.1971112656430725}, {"index": "Yellow Onions", "count": 73167, "product_num": 4605, "Pct_of_Baskets": 2.138708707155015}, {"index": "Organic Gala Apples", "count": 72846, "product_num": 37646, "Pct_of_Baskets": 2.1293257135240506}, {"index": "Organic Baby Arugula", "count": 72829, "product_num": 21616, "Pct_of_Baskets": 2.1288287948582365}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>
