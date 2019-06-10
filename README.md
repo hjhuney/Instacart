@@ -64,7 +64,7 @@ This is one of the charts where I particularly recommend looking at the interact
 
 ### Products by Number of Times Ordered (Bins)
 
-Let's also take a look at how often the products are ordered. There are nearly 50,000 products available, so bin the products based on the number of times they were ordered. 
+Let's also take a look at how often the products are ordered. There are nearly 50,000 products available, so we'll gropu the products into bins based on the number of times they were ordered. 
 
 ![Bins](https://github.com/hjhuney/Instacart/blob/master/images/product_bins.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/bin_chart.html)</i>
