@@ -4,7 +4,7 @@
 
 ## Data Exploration
 
-![Time of Day](https://github.com/hjhuney/Instacart/blob/master/images/time_of_day.svg)
+![Time of Day](https://github.com/hjhuney/Instacart/blob/master/images/time_of_day.svg)<br>
 [Click here to see interactive version](https://hjhuney.github.io/Instacart/html/time_of_day.html)
 
 ## Recommender System Options
