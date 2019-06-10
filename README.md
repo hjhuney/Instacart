@@ -1,8 +1,10 @@
 # Instacart
 
-## Exploration
+## Overview
 
-## Recommender Options
+## Data Exploration
+
+## Recommender System Options
 
 ### Item-Based Similarity
 
