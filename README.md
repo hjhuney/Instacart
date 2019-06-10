@@ -62,7 +62,7 @@ Regular bananas are ordered in a whopping 13% of baskets, while organic bananas 
 
 ### Products by Number of Times Ordered (Bins)
 
-Finally, let's take a look at how often the products are ordered. There are nearly 50,000 products available, so bin the products based on the number of times they were ordered. 
+Let's also take a look at how often the products are ordered. There are nearly 50,000 products available, so bin the products based on the number of times they were ordered. 
 
 ![Bins](https://github.com/hjhuney/Instacart/blob/master/images/product_bins.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/bin_chart.html)</i>
@@ -71,48 +71,37 @@ What this visualization tells us is that the majority of products are ordered be
 
 Items ordered 5 or fewer times account for 8.5% of total products and products ordered fewer than 20 times account for roughly 30% of products. A sizable percentage (~ 23%) of products are ordered between 100 and 500 times. 
 
-## Associations
-
-Now, let's look at individual products and see what other items customers purchased. 
 
 ### Organic Strawberries
 
-We'll start by looking at organic strawberries, one of the most popular items. The chart below lays out the top 30 products ordered alongside of organic strawberries. 
+Now, let's look at individual products and see what other items customers purchased. We'll start by looking at organic strawberries, one of the most popular items. The chart below lays out the top 30 products ordered alongside of organic strawberries. 
 
 ![Strawberries](https://github.com/hjhuney/Instacart/blob/master/images/strawberries.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/strawberry.html)</i>
 
-### Honeycrisp Apples
+ 
 
-Next, let's look at honeycrisp apples. This time, we'll look at the 10 most commonly ordered items alongside of our product. 
+## Recommender System Options
+
+### Item-Based: Top Purchased Items
+
+We can provide recommendations based on several factors. One way would be to make recommendations based on items frequently purchased with the most recently purchased item. For instance, if our customer ordered "Honeycrisp Apples", we can find the 10 items most frequently purchased alongside this item. 
+
+In this case, we find that bananas (regular and organic), organic strawberries, organic avocadoes, and organic baby spinach are most frequently purchased with honeycrisp apples. 
 
 ![Honeycrisp](https://github.com/hjhuney/Instacart/blob/master/images/honeycrisp.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/honeycrisp.html)</i>
 
-### Turkey Burgers
-
-Finally, let's shift gears away from produce and look at the top 20 items purchased alongside of organic turkey burgers. 
+In another example, we find the items most frequently purchased with "Organic Turkey Burgers". The top 5 items includes bananas, strawberries, and hass avocados. 
 
 ![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/images/turkey_burgers.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/turkey.html)</i>
 
-Bananas still dominate at the top, but we can see some different preferences creeping in, as turkey burger customers were more likely to order baby carrots, hummus, and cucumber kirby than the "honeycrisp" and "strawberry" customers. 
-
-## Recommender System Options
-
-### Item-Based Similarity
-
-We can provide recommendations based on several factors. One way would be tomake recommendations based on items frequently purchased with the most recently purchased item. For instance, if our customer ordered "Honeycrisp Apples", we can find the 10 items most frequently purchased alongside this item. 
-
-In this case, we find that bananas (regular and organic), organic strawberries, organic avocadoes, and organic baby spinach are most frequently purchased with honeycrisp apples. 
-
-
-In another example, we find the items most frequently purchased with "Organic Turkey Burgers". The top 5 items includes bananas, strawberries, and hass avocados. 
-
-
 The upside to this method is that we will always get frequently purchased items that pair well with the item the customer purchased. We're unlikely to get very off the wall recommendations using this system. 
 
 The downside is that we will likely always be giving our customers similar recommendations. For instance, note that the honeycrisp apples and organic turkey burgers both generated similar recommednations for bananas and strawberries. We could find ways to negate this issue. For instance, we could randomize the top 30 items. Or we could compare the items purchased versus an "average market basket." For instance, if bananas are purchased in 15% of baskets, but only 11% of customers who order oganic turkey burgers order them, we would not want to recommend them. However, if zucchni is purchased by 8% of customer who order the turkey burgers, but only 3% of our general population, this might be a good recommendation since a much higher than average percentage of customers who order turkey burgers also order zucchini. 
+
+In the case of the turket burgers, we find that 
 
 ### Collaborative Filtering
 
