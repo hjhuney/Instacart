@@ -4,48 +4,54 @@
 
 ## Data Exploration
 
+First let's take a look at time of day for orders. 
+
 ![Time of Day](https://github.com/hjhuney/Instacart/blob/master/images/time_of_day.svg)<br>
 <i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
 
+From this, we can see that most orders come in the 7am - 9pm timeframe, with heaviest demand from 9am - 5pm. 
 
+Next, we'll look at orders by day of week. 
 
 ![Day of Week](https://github.com/hjhuney/Instacart/blob/master/images/day_of_week.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/day_of_week.html)</i>
 
+From this chart, we can see that orders are spread out reasonably well over the week, but Sunday and Monday are the busiest days, account for ~ 34% of all orders. Differences between Tuesday thru Saturday appear to be neglible, so we can think of the week in terms of two categories: Sunday + Monday (peak days) and Tues - Sat.   
 
+Now we'll look at days since prior order
 
 ![Days Since Prior Order](https://github.com/hjhuney/Instacart/blob/master/images/prev_order.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/prev_order.html)</i>
 
-
+The most interesting observation here is that ~ 10% of customers reorder exactly 7 days after their prior order. Approximately 50% of customers reorder within 7 days.
 
 ![Orders by Departments](https://github.com/hjhuney/Instacart/blob/master/images/dept.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/dept.html)</i>
 
 
 
 ![Top 30 Items](https://github.com/hjhuney/Instacart/blob/master/images/top_30_items.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/top30.html)</i>
 
 
 
 ![Bins](https://github.com/hjhuney/Instacart/blob/master/images/product_bins.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/bin_chart.html)</i>
 
 
 
 ![Strawberries](https://github.com/hjhuney/Instacart/blob/master/images/strawberries.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/strawberry.html)</i>
 
 
 
 ![Honeycrisp](https://github.com/hjhuney/Instacart/blob/master/images/honeycrisp.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/honeycrisp.html)</i>
 
 
 
 ![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/images/turkey_burgers.svg)<br>
-<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/turkey.html)</i>
 
 ## Recommender System Options
 
