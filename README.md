@@ -23,3 +23,7 @@ The downside is that we will likely always be giving our customers similar recom
 ### Collaborative Filtering
 
 Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products (0=not purchased, 1=purchased) and find cosine similarity between all the orders. From this, we'll find the most similar "market baskets" and we can determine what items people were most likely to purchase in these baskets. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
+
+### Singular Value Decomposition (SVD)
+
+Principal components analysis (PCA). 
