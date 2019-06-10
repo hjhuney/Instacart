@@ -101,12 +101,26 @@ The upside to this method is that we will always get frequently purchased items 
 
 The downside is that we will likely always be giving our customers similar recommendations. For instance, note that the honeycrisp apples and organic turkey burgers both generated similar recommednations for bananas and strawberries. We could find ways to negate this issue. For instance, we could randomize the top 30 items. Or we could compare the items purchased versus an "average market basket." For instance, if bananas are purchased in 15% of baskets, but only 11% of customers who order oganic turkey burgers order them, we would not want to recommend them. However, if zucchni is purchased by 8% of customer who order the turkey burgers, but only 3% of our general population, this might be a good recommendation since a much higher than average percentage of customers who order turkey burgers also order zucchini. 
 
-In the case of the turket burgers, we find that 
+In the case of the organic turkey burgers, we find that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. 
 
-### Collaborative Filtering
+### Item-Based Collaborative Filtering
 
-Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products (0=not purchased, 1=purchased) and find cosine similarity between all the orders. From this, we'll find the most similar "market baskets" and we can determine what items people were most likely to purchase in these baskets. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
+Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased) and find cosine similarity between all the products. From this, we'll find the most similar items. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
+
+As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very close matches, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". However, some recommendations were more questionable such as "Cara Cara Oranges" and "coleslaw". 
+
+Overall, however, the algorithm seemed to perform reasonably well on specific items such as the cookies. The results with frequently purchased items such as the organic turkey burgers seemed more random. In this instance, recommendations include "apple + banana fruit bar", "whole milk greek plain yogurt", and "organic unsweetened & salt free sunflower seed oil". It's possible that these are good recommendations, but it's not clear on the face of it that there's a definite connection. 
+
+### Basket-Based Collaborative Filtering
+
+Another approach would be to use collaborative filtering on a market basket basis (i.e. order basis) rather than item-basis. In this case, we'd search for similar market baskets and find commonly purchased items in those baskets. We'd then filter out the items already in the customers' baskets, and recommend other items frequently purchased. 
+
+The benefit of this approach over the previous ones is that we're basing our recommendations on the whole market basket rather than a single item. This way we may be able to find deeper connections. The downside is that, similar to the first mentioned approach, we tend to turn up a lot of popular items that may simply be coincidental. 
 
 ### Singular Value Decomposition (SVD)
 
 Principal components analysis (PCA). 
+
+### Ultimate Goals
+
+Ultimately, the real goal should be to find recommendations that showcase new items to the customer that they wish to purchase. 
