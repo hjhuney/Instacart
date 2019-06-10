@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"background": "white", "view": {"width": 400, "height": 300}}, "data": {"name": "data-014e0a7dab42df99afd0375749910c16"}, "mark": "bar", "encoding": {"color": {"type": "quantitative", "field": "order_hour_of_day", "legend": null, "scale": {"scheme": "viridis"}, "sort": "descending"}, "tooltip": [{"type": "ordinal", "field": "index", "title": "Hour of Day"}, {"type": "quantitative", "field": "order_hour_of_day"}, {"type": "quantitative", "field": "pct_of_total"}], "x": {"type": "ordinal", "bin": false, "field": "index", "title": "hour of day"}, "y": {"type": "quantitative", "field": "order_hour_of_day", "title": "count"}}, "height": 400, "title": "Orders by Hour of Day", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-014e0a7dab42df99afd0375749910c16": [{"index": 10, "order_hour_of_day": 288418, "pct_of_total": 8.43}, {"index": 11, "order_hour_of_day": 284728, "pct_of_total": 8.32}, {"index": 15, "order_hour_of_day": 283639, "pct_of_total": 8.29}, {"index": 14, "order_hour_of_day": 283042, "pct_of_total": 8.27}, {"index": 13, "order_hour_of_day": 277999, "pct_of_total": 8.13}, {"index": 12, "order_hour_of_day": 272841, "pct_of_total": 7.98}, {"index": 16, "order_hour_of_day": 272553, "pct_of_total": 7.97}, {"index": 9, "order_hour_of_day": 257812, "pct_of_total": 7.54}, {"index": 17, "order_hour_of_day": 228795, "pct_of_total": 6.69}, {"index": 18, "order_hour_of_day": 182912, "pct_of_total": 5.35}, {"index": 8, "order_hour_of_day": 178201, "pct_of_total": 5.21}, {"index": 19, "order_hour_of_day": 140569, "pct_of_total": 4.11}, {"index": 20, "order_hour_of_day": 104292, "pct_of_total": 3.05}, {"index": 7, "order_hour_of_day": 91868, "pct_of_total": 2.69}, {"index": 21, "order_hour_of_day": 78109, "pct_of_total": 2.28}, {"index": 22, "order_hour_of_day": 61468, "pct_of_total": 1.8}, {"index": 23, "order_hour_of_day": 40043, "pct_of_total": 1.17}, {"index": 6, "order_hour_of_day": 30529, "pct_of_total": 0.89}, {"index": 0, "order_hour_of_day": 22758, "pct_of_total": 0.67}, {"index": 1, "order_hour_of_day": 12398, "pct_of_total": 0.36}, {"index": 5, "order_hour_of_day": 9569, "pct_of_total": 0.28}, {"index": 2, "order_hour_of_day": 7539, "pct_of_total": 0.22}, {"index": 4, "order_hour_of_day": 5527, "pct_of_total": 0.16}, {"index": 3, "order_hour_of_day": 5474, "pct_of_total": 0.16}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>
