@@ -132,7 +132,7 @@ As an example, I developed a simple algorithm for cosine similiarity. I tested a
 
 Overall, however, the algorithm seemed to perform reasonably well on specific items such as the cookies. The results with frequently purchased items such as the organic turkey burgers seemed more random. In this instance, recommendations include "apple + banana fruit bar", "whole milk greek plain yogurt", and "organic unsweetened & salt free sunflower seed oil". It's possible that these are good recommendations, but it's not clear on the face of it that there's a definite connection. 
 
-### Basket-Based Collaborative Filtering
+### Order-Based Collaborative Filtering
 
 Another approach would be to use collaborative filtering on a market basket basis (i.e. order basis) rather than item-basis. In this case, we'd search for similar market baskets and find commonly purchased items in those baskets. We'd then filter out the items already in the customers' baskets, and recommend other items frequently purchased. 
 
