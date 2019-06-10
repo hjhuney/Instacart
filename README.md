@@ -4,8 +4,48 @@
 
 ## Data Exploration
 
-![Time of Day](https://github.com/hjhuney/Instacart/blob/master/images/time_of_day.svg)<br><br>
-[Interactive version](https://hjhuney.github.io/Instacart/html/time_of_day.html)
+![Time of Day](https://github.com/hjhuney/Instacart/blob/master/images/time_of_day.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Day of Week](https://github.com/hjhuney/Instacart/blob/master/images/day_of_week.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Days Since Prior Order](https://github.com/hjhuney/Instacart/blob/master/images/prev_order.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Orders by Departments](https://github.com/hjhuney/Instacart/blob/master/images/dept.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Top 30 Items](https://github.com/hjhuney/Instacart/blob/master/images/top_30_items.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Bins](https://github.com/hjhuney/Instacart/blob/master/images/product_bins.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Strawberries](https://github.com/hjhuney/Instacart/blob/master/images/strawberries.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Honeycrisp](https://github.com/hjhuney/Instacart/blob/master/images/honeycrisp.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
+
+
+
+![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/images/turkey_burgers.svg)<br>
+<i>[Click here for interactive version of chart](https://hjhuney.github.io/Instacart/html/time_of_day.html)</i>
 
 ## Recommender System Options
 
