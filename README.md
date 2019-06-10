@@ -108,27 +108,19 @@ With that, let's take a look at some possible recommender systems.
 
 ## Recommender System Options
 
-### Item-Based: Top Purchased Items
-
-We can provide recommendations based on several factors. One way would be to make recommendations based on items frequently purchased with the most recently purchased item. For instance, if our customer ordered "Honeycrisp Apples", we can find the 10 items most frequently purchased alongside this item. 
-
-In this case, we find that bananas (regular and organic), organic strawberries, organic avocadoes, and organic baby spinach are most frequently purchased with honeycrisp apples. 
-
-The upside to this method is that we will always get frequently purchased items that pair well with the item the customer purchased. We're unlikely to get very off the wall recommendations using this system. 
-
-The downside is that we will likely always be giving our customers similar and popular recommendations. For instance, note that the honeycrisp apples and organic turkey burgers both generated similar recommednations for bananas and strawberries. 
-
 ### Item-Based: Purchase Ratio over Average Customer
 
-Simply recommending the top purchased items has more downsides in all likelihood. However, we can modify this approach by doing what we did above: looking at which items are more likely to be purchased given that a customer purchased one item. In the case of the organic turkey burgers, we found that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. These might make good recommendations. 
+We can provide recommendations based on several factors. One methodology would be to recommend items based on our "purchase ratios" mentioned above, which shows us what items are more frequently purchased (versus the average) when a customer purchases a certain item. 
 
-The benefit of this method is that we have strong evidence that customers that purchase these items are more likely to be interested in these addtional items. However, we may have to modify our formula somewhat to insure that we're not getting too obscure items or alternatively, too popular items. Overall, however, this methodology seems like it could make the beginnings of a good recommendation algorithm. 
+In the case of the organic turkey burgers, we found that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. These might make good recommendations. 
+
+The benefit of this method is that we have strong evidence that customers that purchase these items are more likely to be interested in these addtional items. However, we may have to modify our formula somewhat to insure that we're not giving out too obscure items (e.g. infrequently purchased). Overall, however, this methodology seems like it could make the beginnings of a good recommendation algorithm. 
 
 ### Item-Based Collaborative Filtering
 
-Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased), and find cosine similarity between all the products. From this, we'll find the most similar items. Cosine similarity would be the most obvious way to measure this, however, we could also use Jaccard similarity. 
+Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased), and find cosine similarity between all the products. From this, we'll find the most similar items. 
 
-As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very close matches, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". However, some recommendations were more questionable such as "Cara Cara Oranges" and "coleslaw". 
+As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very similar items, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". However, some recommendations were more questionable such as "Cara Cara Oranges" and "coleslaw". 
 
 Overall, however, the algorithm seemed to perform reasonably well on specific items such as the cookies. The results with frequently purchased items such as the organic turkey burgers seemed more random. In this instance, recommendations include "apple + banana fruit bar", "whole milk greek plain yogurt", and "organic unsweetened & salt free sunflower seed oil". It's possible that these are good recommendations, but it's not clear on the face of it that there's a definite connection. 
 
@@ -136,7 +128,7 @@ Overall, however, the algorithm seemed to perform reasonably well on specific it
 
 Another approach would be to use collaborative filtering on a market basket basis (i.e. order basis) rather than item-basis. In this case, we'd search for similar market baskets and find commonly purchased items in those baskets. We'd then filter out the items already in the customers' baskets, and recommend other items frequently purchased. 
 
-The benefit of this approach over the previous ones is that we're basing our recommendations on the whole market basket rather than a single item. This way we may be able to find deeper connections. The downside is that, similar to the first mentioned approach, we tend to turn up a lot of popular items that may simply be coincidental. 
+The benefit of this approach over the previous ones is that we're basing our recommendations on the whole market basket rather than a single item. This way we may be able to find deeper connections. The downside is tha we may tend to get a lot of very popular items that are more coincidental than relevant to the customer. 
 
 ### Singular Value Decomposition (SVD)
 
@@ -146,4 +138,4 @@ Many high performing competitive algorithms in the recommender system sphere rel
 
 Overall, the choice of algorithm here is a complex matter. There are several ways to score our data, but scoring metrics are more art than science in this sphere. This makes recommender systems very different from other spheres of machine learning, such as fraud detection, pricing, churn prediction, etc, where it's much easier to come up with reasonably objective scoring metrics. 
 
-The ultimate goal of a recommender system should be to provide the customer with new info on products they had not previously considered, but that they would like to purchase. This can require significant user testing to perfect, as even world-class algorithms that have scored very well have performed poorly when put into practice. 
+The ultimate goal of a recommender system should be to create value for the customer by providing them with new info on products they had not previously considered, but that they would like to purchase. This can require significant user testing to perfect, as even world-class algorithms that have scored very well have performed poorly when put into practice. 
