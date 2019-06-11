@@ -133,9 +133,3 @@ The benefit of this approach over the previous ones is that we're basing our rec
 ### Singular Value Decomposition (SVD)
 
 Many high performing competitive algorithms in the recommender system sphere rely on Singular Value Decomposition ("SVD"). SVD is related to Principal Components Analysis ("PCA") and searches for latent (hidden) factors in the data in order to group the elements. 
-
-### Overall
-
-Overall, the choice of algorithm here is a complex matter. There are several ways to score our data, but scoring metrics are more art than science in this sphere. This makes recommender systems very different from other spheres of machine learning, such as fraud detection, pricing, churn prediction, etc, where it's much easier to come up with reasonably objective scoring metrics. 
-
-The ultimate goal of a recommender system should be to create value for the customer by providing them with new info on products they had not previously considered, but that they would like to purchase. This can require significant user testing to perfect, as even world-class algorithms that have scored very well have performed poorly when put into practice. 
