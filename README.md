@@ -114,6 +114,16 @@ We can provide recommendations based on several factors. One methodology would b
 
 In the case of the organic turkey burgers, we found that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. These might make good recommendations. 
 
+![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_turkey.jpg)<br>
+
+![Mozzarella](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_cheese.jpg)<br>
+
+![Sourdough Bread](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_bread.jpg)<br>
+
+![Hummus](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_hummus.jpg)<br>
+
+![Sparkling Water](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_sparkling.jpg)<br>
+
 The benefit of this method is that we have strong evidence that customers that purchase these items are more likely to be interested in these addtional items. However, we may have to modify our formula somewhat to insure that we're not giving out too obscure items (e.g. infrequently purchased). Overall, however, this methodology seems like it could make the beginnings of a good recommendation algorithm. 
 
 ### Item-Based Collaborative Filtering
