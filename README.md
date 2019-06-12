@@ -114,17 +114,55 @@ We can provide recommendations based on several factors. One methodology would b
 
 In the case of the organic turkey burgers, we found that customers were 4 times more likely to purchase baby carrots than the average customer and 3 times more likely to purchase hummus, organic red bell peppers, and boneless skinless chicken breasts. These might make good recommendations. 
 
+I created an algorithm that took the top 100 items purchased alongside every item. Then the algorithm filters out the top 10 items based on which items the customers were most likely to purchase versus the average customer. Here were the results.
+
+#### Turkey Burgers
+
+We'll start out with our organic turkey burgers. 
+
 ![Turkey Burgers](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_turkey.jpg)<br>
+
+
+Here the top recommendations include:
+
+* Grilled chicken breast strips (purchased 12x more than average)
+* Naturals chicken nuggets (purchased 9x more than average)
+* Organic chicken strips (purchased 8x more than average)
+
+All the recommendations here also seem to pass the smell test. Do seedless raisings pair well with turkey burgers? I'm not sure, but it hardly seems outlandish. 
+
+#### Organic Shredded Mozzarella
+
+Next we'll look at mozzarella cheese. 
 
 ![Mozzarella](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_cheese.jpg)<br>
 
-![Sourdough Bread](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_bread.jpg)<br>
+Customers that purchased this particular mozzarella were recommended these items:
+
+* Whole milk Ricotta cheese (purchased 20x more than average)
+* Pizza sauce (purchased 19x more than average)
+* Uncured pepperoni (purchased 14x more than average)
+
+Here the recommendations seem particularly on-point, as we mostly see cheeses and pizza toppings. 
+
+
+#### Lemon Hummus
+
+Next is lemon hummus. 
 
 ![Hummus](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_hummus.jpg)<br>
 
+We find recommendations for jalapeno hummus and garlic hummus. Also many recomnendations for carrots and cheese. 
+
+#### Blackberry Cucumber Sparkling Water
+
+Finally, we'll take a look at blackberry cucumber sparkling water. 
+
 ![Sparkling Water](https://github.com/hjhuney/Instacart/blob/master/output_images/cap_sparkling.jpg)<br>
 
-The benefit of this method is that we have strong evidence that customers that purchase these items are more likely to be interested in these addtional items. However, we may have to modify our formula somewhat to insure that we're not giving out too obscure items (e.g. infrequently purchased). Overall, however, this methodology seems like it could make the beginnings of a good recommendation algorithm. 
+Every recommendation, in this instance, is another type of sparkling water. It seems that customers that purchase one flavor of sparkling water are much more likely than average to purchase another. Note that our 10th recommendation was purcahsed 20 times more than average and our top rec was purcahsed 105 times more than average. 
+
+Overall, this methodology seems to be producing recommendations that seem reasonable. 
 
 ### Item-Based Collaborative Filtering
 
