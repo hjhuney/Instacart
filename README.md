@@ -168,16 +168,4 @@ Overall, this methodology seems to be producing recommendations that seem reason
 
 Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased), and find cosine similarity between all the products. From this, we'll find the most similar items. 
 
-As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very similar items, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". However, some recommendations were more questionable such as "Cara Cara Oranges" and "coleslaw". 
-
-Overall, however, the algorithm seemed to perform reasonably well on specific items such as the cookies. The results with frequently purchased items such as the organic turkey burgers seemed more random. In this instance, recommendations include "apple + banana fruit bar", "whole milk greek plain yogurt", and "organic unsweetened & salt free sunflower seed oil". It's possible that these are good recommendations, but it's not clear on the face of it that there's a definite connection. 
-
-### Order-Based Collaborative Filtering
-
-Another approach would be to use collaborative filtering on a market basket basis (i.e. order basis) rather than item-basis. In this case, we'd search for similar market baskets and find commonly purchased items in those baskets. We'd then filter out the items already in the customers' baskets, and recommend other items frequently purchased. 
-
-The benefit of this approach over the previous ones is that we're basing our recommendations on the whole market basket rather than a single item. This way we may be able to find deeper connections. The downside is tha we may tend to get a lot of very popular items that are more coincidental than relevant to the customer. 
-
-### Singular Value Decomposition (SVD)
-
-Many high performing competitive algorithms in the recommender system sphere rely on Singular Value Decomposition ("SVD"). SVD is related to Principal Components Analysis ("PCA") and searches for latent (hidden) factors in the data in order to group the elements. 
+As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very similar items, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". 
