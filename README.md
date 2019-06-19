@@ -169,3 +169,5 @@ Overall, this methodology seems to be producing recommendations that seem reason
 Another methodology would be to examine all the orders in a training set, create a sparse matrix with all products and orders (0=not purchased, 1=purchased), and find cosine similarity between all the products. From this, we'll find the most similar items. 
 
 As an example, I developed a simple algorithm for cosine similiarity. I tested a few products; the first of which was chocolate sandwich cookies. The algorithm's top recommendations included some very similar items, such as "peanut butter cookies", "Ritz crackers", and "rice sea salt & pepper snacks". 
+
+The results of this algorithm can be seen in the notebook, linked at the top of this page. 
